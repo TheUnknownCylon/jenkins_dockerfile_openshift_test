@@ -1,9 +1,11 @@
 pipeline {
     agent none
+    options { skipDefaultCheckout(false) }
     stages {
         stage('Stage 1') {
             agent { dockerfile true }
             steps {
+                checkout scm
                 sh 'pwd'
                 sh 'ls'
                 sh 'echo $REMCO'
@@ -21,7 +23,6 @@ pipeline {
             agent {
                 docker 'openjdk:8-jre'
             }
-            options { skipDefaultCheckout(false) }
             steps {
                 sh 'ls'
                 sh 'java -version'
