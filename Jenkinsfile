@@ -21,7 +21,7 @@ pipeline {
             agent {
                 docker 'openjdk:8-jre'
             }
-            options { skipDefaultCheckout() }
+            options { skipDefaultCheckout(false) }
             steps {
                 sh 'ls'
                 sh 'java -version'
