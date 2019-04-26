@@ -18,7 +18,10 @@ pipeline {
             }
         }
         stage('Stage 3') {
-            agent { docker 'openjdk:8-jre' }
+            agent {
+                docker 'openjdk:8-jre' 
+                options { skipDefaultCheckout() }
+            }
             steps {
                 sh 'ls'
                 sh 'java -version'
