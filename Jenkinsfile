@@ -1,7 +1,7 @@
 pipeline {
-    agent { dockerfile true }
     stages {
         stage('Stage 1') {
+            agent { dockerfile true }
             steps {
                 sh 'pwd'
                 sh 'ls'
@@ -9,6 +9,7 @@ pipeline {
             }
         }
         stage('Stage 2') {
+            agent { dockerfile true }
             steps {
                 sh 'pwd'
                 sh 'ls'
